@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gallery</title>
+</head>
+<body>
+<section class="imageses">
+	<header class="section-head">
+		<h1><Center>MY IMAGE GALLERY</Center></h1>
+	</header>
+
+	<main class="mainContainer">
+		<div class="button-group">
+			<button class="button active" data-filter="*">All</button>
+			<button class="button" data-filter=".design">Design</button>
+		<button class="button" data-filter=".development">Development</button>
+			<button class="button" data-filter=".logo">Logo</button>
+		</div>
+		<div class="gallery">
+			<div class="item design">
+				<img src="design1.jpg">
+				<img src="https://cms-assets.bajajfinserv.in/is/image/bajajfinance/best-mobile-phone-under-12000?scl=1">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<div class="item design">
+				<img src="design2.jpg">
+				<img src="https://img.freepik.com/premium-vector/sun-beach-landscape-with-sunscreen-cream-bottles-summer-ad-sunblock-uv-product-cosmetic-lotion-skin-care-flat-healthy-lifestyle-background_144101-486.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<div class="item development">
+				<img src="website1.jpg">
+				<img src="https://i.pcmag.com/imagery/articles/044a4pYZNk91QwMe8l3DSM1-5.fit_lim.size_1200x630.v1708624706.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<div class="item development">
+				<img src="website2.jpg">
+				<img src="https://us.123rf.com/450wm/georgina198/georgina1982101/georgina198210100002/176843331-baked-bell-pepper-with-egg-inside-the-pepper.jpg?ver=6">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<div class="item development">
+				<img src="website3.jpg">
+				<img src="https://images.squarespace-cdn.com/content/v1/587222961b10e30dc0d0dbd9/1614103193280-YVC54615CL4XF3ABZFMB/Canon+PRO300+Review-4.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+			<div class="item logo">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6ID70TqGru-I6v46nleNpjLgZYLu9c1UcFg&s">
+				<img src="https://i.pinimg.com/474x/aa/a2/45/aaa245759726ab04e968b9bff4981a52.jpg">
+				<div class="overlay">
+					<a href="#">VIEW MORE</a>
+				</div>
+			</div>
+		</div>
+	</main>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+<script type="text/javascript">
+	var $galleryContainer = $('.gallery').isotope({
+		itemSelector: '.item',
+  		layoutMode: 'fitRows'
+	})
+	$('.button-group .button').on('click', function(){
+		$('.button-group .button').removeClass('active');
+		$(this).addClass('active');
+		var value = $(this).attr('data-filter');
+		$galleryContainer.isotope({
+			filter: value 
+		})
+	})
+</script>
+</body>
+</html>
